@@ -62,7 +62,7 @@
           </a>
         </div>
         <div class="col-sm-6">
-          <a href="#">
+          <a id="launchListadoDePolizas" data-toggle="modal" data-target="#listadoDePolizas">
             <div class="card card-button bg-info text-white">
               <div class="card-body">
                 <i class="fas fa-scroll"></i>
@@ -113,12 +113,11 @@
 
   <!-- Modales -->
   <!-- Modal denunciar Siniestro -->
-  <!-- modal Asegurado -->
   <div class="modal fade bg-danger" id="denunciarSiniestro" tabindex="-1" role="dialog" aria-labelledby="denunciarSiniestro" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="denunciarSiniestroTitulo">Inicio Sesión - Asegurador</h5>
+          <h5 class="modal-title" id="denunciarSiniestroTitulo">Denuncia de Siniestro</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -131,8 +130,10 @@
             </div>
             <div class="form-group">
               <div class="row">
-                <div class="col"><p class="mx-sm-3">Prueba enviando tu Geolocalización</p></div>
-                <div class="col" id="geolocationButton"><button onclick="geolocation()"  class="btn btn-warning"> Enviar mi Geolocalización</button></div>
+                <div class="col">
+                  <p class="mx-sm-3">Prueba enviando tu Geolocalización</p>
+                </div>
+                <div class="col" id="geolocationButton"><button onclick="geolocation()" class="btn btn-warning"> Enviar mi Geolocalización</button></div>
               </div>
             </div>
             <div class="form-group">
@@ -147,8 +148,65 @@
               <label for="exampleFormControlTextarea1">Escriba una breve descripción de lo ocurrido</label>
               <textarea class="form-control" id="descripcionSiniestro" rows="3"></textarea>
             </div>
+            <div class="form-group">
+              <label for="exampleFormControlFile1">Agregar Fotografía del Siniestro</label>
+              <input type="file" class=" form-control-file" accept="image/*" capture="camera" multiple id="imagenSiniestro">
+            </div>
             <button type="submit" class="btn btn-warning">Enviar</button>
           </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- modal Polizas -->
+  <div class="modal fade bg-info" id="listadoDePolizas" tabindex="-1" role="dialog" aria-labelledby="listadoDePolizas" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 700px">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="denunciarSiniestroTitulo">Listado de Polizas</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <table class="table table-borderless table-responsive">
+            <thead>
+              <tr>
+                <th scope="col">Dominio</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Marca</th>
+                <th scope="col">Modelo</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Ver</th>
+                <th scope="col">Imprimir</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">AIW 329</th>
+                <td>Camioneta</td>
+                <td>Suzuki</td>
+                <td>Vitara</td>
+                <td class="text-success">Pagado</td>
+                <td class="text-center"><a href="#"><i class="fas fa-eye"></i></a></td>
+                <td class="text-center"><a href="#"><i class="fas fa-print"></i></a></td>
+              </tr>
+              <tr>
+                <th scope="row">JOA 603</th>
+                <td>Auto</td>
+                <td>Volkswagen</td>
+                <td>Gol Trend</td>
+                <td class="text-danger">Deuda</td>
+              </tr>
+              <tr>
+                <th scope="row">GWN 858</th>
+                <td>Auto</td>
+                <td>Renault</td>
+                <td>Megan</td>
+                <td class="text-warning">Por Vencer</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
